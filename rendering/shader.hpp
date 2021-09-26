@@ -105,9 +105,6 @@ public:
     inline void set_uniform(const char* u_name, float x) { glUniform1f(locate(u_name), x); }
     
     // int
-    inline void set_uniform(const char* u_name, int x)
-    {
-        glUniform1i(locate(u_name), x);
-    }
+    inline void set_uniform(const char* u_name, int x) { glUniform1i(locate(u_name), x); }
 
 };

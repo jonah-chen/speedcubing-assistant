@@ -89,18 +89,12 @@ int main(void)
     //     {-0.5f, 0.5f, _WHITE_L, _WHITE_U},
     //     {-0.5f, -0.5f, _WHITE_L, _WHITE_D}
     // };
-
-    std::vector<unsigned int> indices {
-        0u, 1u, 2u,
-        1u, 2u, 3u
-    };
     
-
-    
-    cube3d::Mesh mesh (cube3d::_DBG_white_cube(), cube3d::IBO);
+    Cube c;
     Shader shader ("vertexshader.glsl", "fragmentshader.glsl");
     Camera camera (glm::vec3(-5,0,-5), 70.0f, 4.0f/3.0f, 0.01f, 1000.0f);
-    
+    cube3d::Mesh mesh (cube3d::vertices_from_cube(c), cube3d::IBO(camera.get_pos()));
+
     shader.set_uniform("u_texture", 0);
     
     

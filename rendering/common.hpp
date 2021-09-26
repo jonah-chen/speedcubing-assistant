@@ -6,10 +6,10 @@
 colors stored in arrays
 */
 #define WHITE 0
-#define YELLOW 1
-#define ORANGE 2
-#define RED 3
-#define GREEN 4
+#define YELLOW 3
+#define ORANGE 1
+#define RED 4
+#define GREEN 2
 #define BLUE 5
 
 /*
@@ -36,9 +36,19 @@ U(p), D(own), L(eft), R(ight)
 #define _YELLOW_U _BLUE_U
 #define _YELLOW_D _BLUE_D
 
+#define _RED_L _WHITE_L
+#define _RED_R _WHITE_R
+#define _RED_U 0.0260f
+#define _RED_D 0.1277f
+
+#define _ORANGE_L _WHITE_L
+#define _ORANGE_R _WHITE_R
+#define _ORANGE_U 0.6685f
+#define _ORANGE_D 0.7708f
+
 /*
 texture coords macros
--1 if color is invalid
+-1.0f if color is invalid
 */
 #define L_TEXTURE(COLOR) COLOR==WHITE?_WHITE_L:(\
                          COLOR==BLUE?_BLUE_L:(\
@@ -79,7 +89,7 @@ X - L/R
 Y - U/D
 Z - B/F
 */
-#define RIGHT_VERTEX_POS \
+#define LEFT_VERTEX_POS \
 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 1,\
 0, 0, 1, 0, 1, 1, 0, 0, 2, 0, 1, 2,\
 0, 0, 2, 0, 1, 2, 0, 0, 3, 0, 1, 3,\
@@ -90,7 +100,7 @@ Z - B/F
 0, 2, 1, 0, 3, 1, 0, 2, 2, 0, 3, 2,\
 0, 2, 2, 0, 3, 2, 0, 2, 3, 0, 3, 3
 
-#define LEFT_VERTEX_POS \
+#define RIGHT_VERTEX_POS \
 3, 0, 0, 3, 1, 0, 3, 0, 1, 3, 1, 1,\
 3, 0, 1, 3, 1, 1, 3, 0, 2, 3, 1, 2,\
 3, 0, 2, 3, 1, 2, 3, 0, 3, 3, 1, 3,\
@@ -149,7 +159,7 @@ Z - B/F
 indices
 */
 
-#define RIGHT_INDICES \
+#define UP_INDICES \
 0, 1, 2, 1, 2, 3,\
 4, 5, 6, 5, 6, 7,\
 8, 9, 10, 9, 10, 11,\
@@ -160,7 +170,7 @@ indices
 28, 29, 30, 29, 30, 31,\
 32, 33, 34, 33, 34, 35
 
-#define LEFT_INDICES \
+#define RIGHT_INDICES \
 36, 37, 38, 37, 38, 39,\
 40, 41, 42, 41, 42, 43,\
 44, 45, 46, 45, 46, 47,\
@@ -182,7 +192,7 @@ indices
 100, 101, 102, 101, 102, 103,\
 104, 105, 106, 105, 106, 107
 
-#define BACK_INDICES \
+#define DOWN_INDICES \
 108, 109, 110, 109, 110, 111,\
 112, 113, 114, 113, 114, 115,\
 116, 117, 118, 117, 118, 119,\
@@ -193,7 +203,7 @@ indices
 136, 137, 138, 137, 138, 139,\
 140, 141, 142, 141, 142, 143
 
-#define DOWN_INDICES \
+#define LEFT_INDICES \
 144, 145, 146, 145, 146, 147,\
 148, 149, 150, 149, 150, 151,\
 152, 153, 154, 153, 154, 155,\
@@ -204,7 +214,7 @@ indices
 172, 173, 174, 173, 174, 175,\
 176, 177, 178, 177, 178, 179
 
-#define UP_INDICES \
+#define BACK_INDICES \
 180, 181, 182, 181, 182, 183,\
 184, 185, 186, 185, 186, 187,\
 188, 189, 190, 189, 190, 191,\

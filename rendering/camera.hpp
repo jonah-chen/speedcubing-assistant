@@ -23,6 +23,11 @@ public:
         return perspective * glm::lookAt(pos, pos + fwd, up);
     }
 
+    inline glm::vec3 get_pos() const
+    {
+        return pos;
+    }
+
     inline void move_up()
     {
         pos.y += 0.01f;

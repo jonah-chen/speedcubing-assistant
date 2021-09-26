@@ -1,13 +1,15 @@
 #pragma once
-
+#include <cstdint>
 class Cube
 {
-    unsigned char data[54];
-
+    uint8_t data[54];
 public:
-    Cube(); // solved cube
-    Cube(const Cube& other);
-    Cube(const char* moves);
+    Cube(void); // solved cube
+    Cube(const Cube&); // copy constructor
+    Cube(uint8_t[54]);
+    Cube(const char*);
+
+    inline const uint8_t* get_data(void) const { return data; }
     
     // clockwise
     void R();
