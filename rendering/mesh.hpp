@@ -10,7 +10,7 @@ template <typename vertex>
 class Mesh
 {
     unsigned int vao, vbo, ibo, tex;
-
+    
 public:
     std::vector<vertex> vertices;
     std::vector<unsigned int> indices;

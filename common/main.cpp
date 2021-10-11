@@ -4,7 +4,10 @@
 int main(int argc, char* argv[])
 {
     Cube a;
-    for (int i = 0; i < 54; ++i)
-        std::cout << (int)a.get_data()[i];
+    for (uint8_t _ = 0; _ < 6; ++_)
+    {
+        a.L2();
+        std::cout << a;
+    }
     return 0;
 }

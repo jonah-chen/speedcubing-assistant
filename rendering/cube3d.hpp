@@ -11,7 +11,12 @@
 namespace cube3d
 {
     constexpr float V_POSITIONS[] {
-        UP_VERTEX_POS, LEFT_VERTEX_POS, FRONT_VERTEX_POS, DOWN_VERTEX_POS, RIGHT_VERTEX_POS, BACK_VERTEX_POS
+        UP_VERTEX_POS, 
+        LEFT_VERTEX_POS, 
+        FRONT_VERTEX_POS,
+        DOWN_VERTEX_POS, 
+        RIGHT_VERTEX_POS, 
+        BACK_VERTEX_POS
     };
 
     struct vertex
@@ -113,6 +118,8 @@ namespace cube3d
         UP_INDICES, RIGHT_INDICES, FRONT_INDICES
     }; 
 
+    // the back of the index buffer is rendered last
+
     std::vector<unsigned int> IBO(float x, float y, float z)
     {
         return IBOo;
@@ -122,8 +129,5 @@ namespace cube3d
     {
         return IBO(pos.x, pos.y, pos.z);
     }
-
-    
-
     
 }

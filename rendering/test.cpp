@@ -54,43 +54,10 @@ int main(void)
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
     glfwSwapInterval(1);
 
-
-    // // create the 8 vertices of a cube
-    // std::vector<vertex> vertices { 
-    //     { 0.5f,  0.5f,  0.5f},
-    //     { 0.5f,  0.5f, -0.5f}, 
-    //     { 0.5f, -0.5f,  0.5f},
-    //     { 0.5f, -0.5f, -0.5f},
-    //     {-0.5f,  0.5f,  0.5f},
-    //     {-0.5f,  0.5f, -0.5f},
-    //     {-0.5f, -0.5f,  0.5f},
-    //     {-0.5f, -0.5f, -0.5f},
-    // };
-
-    // std::vector<unsigned int> indices {
-    //     0u, 1u, 2u,
-    //     0u, 1u, 4u,
-    //     0u, 2u, 4u,
-    //     5u, 7u, 1u,
-    //     5u, 7u, 4u,
-    //     5u, 4u, 1u,
-    //     6u, 7u, 2u,
-    //     6u, 7u, 4u,
-    //     6u, 2u, 4u,
-    //     3u, 2u, 7u,
-    //     3u, 2u, 1u,
-    //     3u, 1u, 7u
-    // };
-
-
-    // std::vector<cube2d::vertex> vertices {
-    //     {0.5f, 0.5f, _WHITE_R, _WHITE_U},
-    //     {0.5f, -0.5f, _WHITE_R, _WHITE_D},
-    //     {-0.5f, 0.5f, _WHITE_L, _WHITE_U},
-    //     {-0.5f, -0.5f, _WHITE_L, _WHITE_D}
-    // };
-    
     Cube c;
+    c.U();
+    c.U();
+    c.U();
     Shader shader ("vertexshader.glsl", "fragmentshader.glsl");
     Camera camera (glm::vec3(-5,0,-5), 70.0f, 4.0f/3.0f, 0.01f, 1000.0f);
     cube3d::Mesh mesh (cube3d::vertices_from_cube(c), cube3d::IBO(camera.get_pos()));
