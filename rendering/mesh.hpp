@@ -3,7 +3,7 @@
 #include <vector>
 #include <glm/glm.hpp>
 #include <GL/glew.h>
-#include "stb_image.h"
+#include "stb_image.hpp"
 #include <stdio.h>
 #include "common.hpp"
 template <typename vertex>

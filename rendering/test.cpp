@@ -58,7 +58,7 @@ int main(void)
     c.U();
     c.U();
     c.U();
-    Shader shader ("vertexshader.glsl", "fragmentshader.glsl");
+    Shader shader ("./vertexshader.glsl", "./fragmentshader.glsl");
     Camera camera (glm::vec3(-5,0,-5), 70.0f, 4.0f/3.0f, 0.01f, 1000.0f);
     cube3d::Mesh mesh (cube3d::vertices_from_cube(c), cube3d::IBO(camera.get_pos()));
 
