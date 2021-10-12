@@ -26,5 +26,4 @@ Human Readable Macros
                         (COLOR)==RED?"R":(\
                         (COLOR)==ORANGE?"O":\
                         "X"))))))
-
-
+                        
